@@ -992,3 +992,16 @@ details.lyrics summary { cursor: pointer; color: var(--green2); padding: 10px 0;
   .project-shot img { max-height: 28em; }
   .project-shot figcaption { font-size: 0.875em; }
 }
+
+/* Project inquiry: visible labels and an email draft, without a backend. */
+.inquiry-layout { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
+#inquiry-form { display: grid; gap: 12px; margin: 24px 0; }
+#inquiry-form label { font-weight: 700; margin-top: 8px; }
+#inquiry-form input, #inquiry-form textarea {
+  width: 100%; min-width: 0; padding: 12px; border: 1px solid var(--line);
+  border-radius: 3px; background: #101810; color: var(--text); font: inherit;
+}
+#inquiry-form textarea { resize: vertical; }
+#inquiry-form input::placeholder, #inquiry-form textarea::placeholder { color: var(--muted); }
+#inquiry-form button { justify-self: start; cursor: pointer; font: inherit; font-weight: 700; }
+@media (max-width: 900px) { .inquiry-layout { grid-template-columns: minmax(0, 1fr); } }

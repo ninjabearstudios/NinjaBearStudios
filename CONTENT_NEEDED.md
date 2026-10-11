@@ -6,7 +6,6 @@ The site works with these values empty. Nothing below blocks local review or sta
 | --- | --- |
 | TikTok profile | `assets/config.js` → `socials.tiktok` |
 | Discord invite/community | `assets/config.js` → `socials.discord` |
-| Public contact URL or email link | `assets/config.js` → `contactUrl` |
 | Actual trailer | `assets/config.js` → `media.trailerUrl` |
 | Featured highlight/VOD | `assets/config.js` → `media.highlightUrl` |
 
@@ -21,3 +20,5 @@ Additional editorial content belongs in static HTML:
 - `lore.html#archive`: approved story entries. The existing NinjaBear/Glint introduction is preserved without added canon.
 
 The supplied Legacy TileWorks & Design portfolio URL is already in `dev.html#legacy-tileworks` and returned HTTP 200 during verification. The owner-supplied Construction Services Company website is linked in `dev.html#construction-services` and also returned HTTP 200 when added. No public app or game project URLs were supplied. The verified YouTube channel is configured as a text link. Something Good Today now appears as an approved Say It Twice lyric, without an unprovided listening link.
+
+Website inquiries use `inquiry.html` and the owner-confirmed email in `assets/config.js`. The form opens an email draft for the visitor to send; it does not submit to a server.
