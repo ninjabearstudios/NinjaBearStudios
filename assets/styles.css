@@ -933,3 +933,62 @@ details.lyrics summary { cursor: pointer; color: var(--green2); padding: 10px 0;
 #web-development { grid-column: 1 / -1; }
 
 #albums-in-progress > .album + .album { margin-top: 24px; }
+
+/* Large desktop displays: grow readable content alongside the full-width artwork. */
+@media (min-width: 1921px) {
+  body { font-size: clamp(18px, 0.78vw, 30px); }
+  .portal-grid, .dashboard, .mission-strip,
+  .content-grid, .music-library, .site-footer {
+    width: min(3000px, 88vw);
+  }
+  .site-header {
+    top: clamp(24px, 1.25vw, 48px);
+    padding: 18px 6vw;
+    height: clamp(90px, 5vw, 180px);
+    grid-template-columns: minmax(260px, 16vw) 1fr minmax(260px, 16vw);
+  }
+  .site-header::before { display: none; }
+  .brand { height: 100%; }
+  .brand img { width: clamp(400px, 20vw, 768px); }
+  .main-nav { font-size: clamp(16px, 0.8vw, 30px); gap: clamp(28px, 1.5vw, 58px); }
+  .hero { min-height: clamp(700px, 32vw, 1230px); }
+  .hero-copy {
+    margin-left: 28vw;
+    width: 35vw;
+    padding-top: clamp(190px, 9vw, 346px);
+    padding-bottom: 4vw;
+  }
+  .hero h1 { font-size: clamp(76px, 4vw, 150px); }
+  .eyebrow { font-size: clamp(24px, 1.2vw, 44px); }
+  .hero-copy p:not(.eyebrow) { max-width: 34vw; font-size: clamp(20px, 0.95vw, 36px); }
+  .interior-hero { min-height: clamp(440px, 21vw, 806px); padding: 10vw 6vw 3vw; }
+  .interior-hero > div { width: 100%; max-width: 48em; }
+  .interior-hero h1 { font-size: clamp(60px, 3vw, 110px); }
+  .interior-hero p { max-width: 48em; }
+  .btn { padding: 0.9em 1.6em; }
+  .btn.small { font-size: 0.875em; padding: 0.85em 1.5em; }
+  .portal { padding: 1.6em; min-height: 13em; }
+  .portal h2, .feature-panel h2, .feature-panel h3 { font-size: 1.5em; }
+  .portal p { font-size: 1em; max-width: none; }
+  .portal b, .tag, .cover-card span { font-size: 0.8em; }
+  .feature-panel, .content-card { padding: 1.6em; }
+  .updates { padding: 0; }
+  .update-item { padding: 1em; }
+  .update-item h3 { font-size: 1.15em; }
+  .update-item p, .content-card .detail, .site-footer, .track-listen { font-size: 0.875em; }
+  .cover-card { min-height: 12em; padding: 1.25em; }
+  .cover-card strong { font-size: 1.8em; }
+  .thumb { height: 5em; }
+  .glint-panel { grid-template-columns: minmax(0, 1fr) 35%; }
+  .glint-panel img { width: 100%; max-height: 16em; }
+  .music-library h2 { font-size: 1.9em; }
+  .music-library > section > p { max-width: 48em; }
+  .album-heading { grid-template-columns: minmax(0, 11em) minmax(0, 1fr); gap: 1.4em; }
+  .album-heading h3 { font-size: 1.65em; }
+  .album-grid, .content-grid { gap: 1.5em; }
+  .track-list > li { padding: 0.5em 0 0.75em 0.5em; }
+  .lyric-prompt { font-size: 0.75em; }
+  .project-tagline { font-size: 1.4em; }
+  .project-shot img { max-height: 28em; }
+  .project-shot figcaption { font-size: 0.875em; }
+}

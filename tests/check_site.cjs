@@ -6,8 +6,8 @@ const http = require('node:http');
 const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '..');
 const files = ['index', 'music', 'dev', 'streams', 'anime', 'lore', 'about', '404'];
-const widths = [320, 390, 600, 768, 850, 900, 901, 1024, 1200, 1201, 1440, 1600, 1920];
-const screenshotWidths = [320, 390, 768, 1024, 1440, 1920];
+const widths = [320, 390, 600, 768, 850, 900, 901, 1024, 1200, 1201, 1440, 1600, 1920, 2560, 3840];
+const screenshotWidths = [320, 390, 768, 1024, 1440, 1920, 2560, 3840];
 const mime = {'.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.png':'image/png', '.xml':'application/xml', '.txt':'text/plain'};
 const server = http.createServer((req, res) => {
   let name = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).replace(/^\/preview\//, '/');
@@ -218,7 +218,7 @@ async function layout(page, label) {
     ok(fs.readFileSync(path.join(root,'sitemap.xml'),'utf8').match(/<loc>/g).length === 7, 'sitemap seven pages');
     ok(fs.readFileSync(path.join(root,'robots.txt'),'utf8').includes('https://ninjabearstudios.com/sitemap.xml'), 'robots sitemap');
     ok(errors.length === 0, `browser errors: ${errors.join('; ')}`);
-    const report = `${checks} checks passed. Eight pages, 13 widths, root/project paths, links, assets, menus, focus, no-JS, configuration, reduced motion, long titles and 200% browser zoom. No browser errors.\n`;
+    const report = `${checks} checks passed. Eight pages, 15 widths, root/project paths, links, assets, menus, focus, no-JS, configuration, reduced motion, long titles and 200% browser zoom. No browser errors.\n`;
     fs.writeFileSync(path.join(__dirname,'results.txt'), report); console.log(report);
   } finally { await browser.close(); server.close(); }
 })().catch(error => { console.error(error); server.close(); process.exitCode = 1; });
