@@ -21,4 +21,4 @@ Additional editorial content belongs in static HTML:
 
 The supplied Legacy TileWorks & Design portfolio URL is already in `dev.html#legacy-tileworks` and returned HTTP 200 during verification. The owner-supplied Construction Services Company website is linked in `dev.html#construction-services` and also returned HTTP 200 when added. No public app or game project URLs were supplied. The verified YouTube channel is configured as a text link. Something Good Today now appears as an approved Say It Twice lyric, without an unprovided listening link.
 
-Website inquiries use `inquiry.html` and the owner-confirmed email in `assets/config.js`. The form opens an email draft for the visitor to send; it does not submit to a server.
+Website inquiries POST to the owner-supplied Formspree endpoint in `inquiry.html`. `assets/inquiry.js` adds inline success and failure feedback; native submission works without JavaScript. Recipient notification settings are managed in Formspree.

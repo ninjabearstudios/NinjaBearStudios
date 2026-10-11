@@ -47,9 +47,8 @@
       <section class="content-grid inquiry-layout" aria-label="Website project inquiry">
         <article class="content-card">
           <h2>Tell Me About Your Project</h2>
-          <p id="inquiry-explanation">This form prepares an email in your email app. Review it there and send it when you’re ready. Nothing is sent by this website.</p>
-          <p data-inquiry-unavailable>You can contact me directly using the email button below.</p>
-          <form id="inquiry-form" aria-describedby="inquiry-explanation" hidden>
+          <p id="inquiry-explanation">Tell me what you have in mind. Send your inquiry here, and I’ll reply to the email address you provide.</p>
+          <form id="inquiry-form" action="https://formspree.io/f/xeaezpwo" method="post" aria-describedby="inquiry-explanation">
             <label for="inquiry-name">Your name (required)</label>
             <input id="inquiry-name" name="name" autocomplete="name" maxlength="100" required>
             <label for="inquiry-email">Email address (required)</label>
@@ -64,11 +63,10 @@
             <input id="inquiry-budget" name="budget" maxlength="100" placeholder="A rough range is fine, or leave this blank">
             <label for="inquiry-timeline">Ideal timeline</label>
             <input id="inquiry-timeline" name="timeline" maxlength="150" placeholder="Your preferred launch date, or flexible">
-            <button class="btn primary" type="submit">Prepare inquiry email</button>
-            <p id="inquiry-status" role="status"></p>
+            <button class="btn primary" type="submit">Send inquiry</button>
+            <p id="inquiry-status" role="status" tabindex="-1"></p>
           </form>
-          <a class="btn small" href="mailto:onetrueNinjabear@gmail.com">Email me directly</a>
-          <noscript><p>The email draft form needs JavaScript. You can still use the email link above to contact me.</p></noscript>
+          <p class="detail">Your details are processed by Formspree to deliver your inquiry. Please don’t include passwords or payment information.</p>
         </article>
         <aside class="content-card">
           <p class="tag">Greeley based · Serving Colorado</p>

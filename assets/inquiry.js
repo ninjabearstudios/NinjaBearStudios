@@ -1,19 +1,43 @@
 (() => {
   'use strict';
   const form = document.querySelector('#inquiry-form');
-  const destination = window.NINJABEAR_CONFIG?.contactUrl || '';
-  // Email drafts require a confirmed owner-supplied mailto destination.
-  if (!form || !/^mailto:[^?\s]+@[^?\s]+$/i.test(destination)) return;
-  form.hidden = false;
-  document.querySelector('[data-inquiry-unavailable]').hidden = true;
-  form.addEventListener('submit', event => {
+  if (!form) return;
+  const button = form.querySelector('[type="submit"]');
+  const status = document.querySelector('#inquiry-status');
+  let sending = false;
+  form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
-    const data = new FormData(form);
-    const fields = [['Name', 'name'], ['Email', 'email'], ['Business / project', 'business'], ['Existing website', 'website'], ['Project details', 'details'], ['Budget', 'budget'], ['Timeline', 'timeline']];
-    const body = fields.map(([label, key]) => `${label}: ${String(data.get(key) || '').trim() || 'Not specified'}`).join('\n\n');
-    const subject = 'Website project inquiry';
-    window.location.href = `${destination}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    document.querySelector('#inquiry-status').textContent = 'Your email app was requested. Review and send the draft there. If it did not open, use the Email me directly button below. Your inquiry has not been sent by this website.';
+    if (sending || !form.reportValidity()) return;
+    sending = true;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    form.setAttribute('aria-busy', 'true');
+    status.textContent = 'Sending your inquiry…';
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST', body: new FormData(form),
+        headers: { Accept: 'application/json' }, signal: controller.signal
+      });
+      if (!response.ok) {
+        const result = await response.json().catch(() => ({}));
+        const messages = Array.isArray(result.errors) ? result.errors.map(error => error.message).filter(message => typeof message === 'string').join(' ') : '';
+        throw new Error(messages || 'The form service could not accept your inquiry. Please try again.');
+      }
+      form.reset();
+      status.textContent = 'Thank you! Your inquiry has been submitted. I’ll reply to the email address you provided.';
+    } catch (error) {
+      status.textContent = error.name === 'AbortError' || error instanceof TypeError
+        ? 'Submission could not be confirmed. Your details are still here; check your connection and try again.'
+        : `Your inquiry was not submitted. ${error.message}`;
+    } finally {
+      clearTimeout(timeout);
+      sending = false;
+      button.disabled = false;
+      button.textContent = 'Send inquiry';
+      form.removeAttribute('aria-busy');
+      status.focus();
+    }
   });
 })();
