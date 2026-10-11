@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website Project Inquiry | NinjaBear Studios</title>
+    <meta name="description" content="Tell NinjaBear Studios about your website project. Greeley-based web development for clients across Colorado, with remote collaboration and local coffee shop meetings available.">
+    <link rel="canonical" href="https://ninjabearstudios.com/inquiry/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NinjaBear Studios">
+    <meta property="og:title" content="Website Project Inquiry | NinjaBear Studios">
+    <meta property="og:description" content="Tell NinjaBear Studios about your website project. Greeley-based web development for clients across Colorado, with remote collaboration and local coffee shop meetings available.">
+    <meta property="og:url" content="https://ninjabearstudios.com/inquiry/">
+    <meta property="og:image" content="https://ninjabearstudios.com/assets/site-banner.png">
+    <meta property="og:image:width" content="2048">
+    <meta property="og:image:height" content="747">
+    <meta property="og:image:alt" content="NinjaBear and Glint in the moonlit bamboo cyber-dojo">
+    <link rel="icon" href="/assets/favicon.png">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script src="/assets/config.js" defer></script>
+    <script src="/assets/site.js" defer></script>
+    <script src="/assets/inquiry.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="NinjaBear Studios home"><img src="/assets/logo.png" width="1536" height="1024" alt="NinjaBear Studios"></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav" hidden>☰</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/music/">Lyrics</a>
+        <a href="/dev/">Dev</a>
+        <a href="/streams/">Gaming</a>
+        <a href="/anime/">Anime</a>
+        <a href="/lore/">Lore</a>
+        <a href="/about/">About</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="interior-hero">
+        <div>
+          <h1>Let’s Build Your <em>Website</em></h1>
+          <p>Tell me about your business, your goals, and the website you have in mind. Based in Greeley, I work remotely with clients throughout Colorado and welcome coffee shop meetings with local clients.</p>
+          <a class="btn small" href="/dev/">View my website work</a>
+        </div>
+      </section>
+      <section class="content-grid inquiry-layout" aria-label="Website project inquiry">
+        <article class="content-card">
+          <h2>Tell Me About Your Project</h2>
+          <p id="inquiry-explanation">Tell me what you have in mind. Send your inquiry here, and I’ll reply to the email address you provide.</p>
+          <form id="inquiry-form" action="https://formspree.io/f/xeaezpwo" method="post" aria-describedby="inquiry-explanation">
+            <label for="inquiry-name">Your name (required)</label>
+            <input id="inquiry-name" name="name" autocomplete="name" maxlength="100" required>
+            <label for="inquiry-email">Email address (required)</label>
+            <input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+            <label for="inquiry-business">Business or project name</label>
+            <input id="inquiry-business" name="business" autocomplete="organization" maxlength="150">
+            <label for="inquiry-website">Existing website, if any</label>
+            <input id="inquiry-website" name="website" type="url" placeholder="https://" maxlength="300">
+            <label for="inquiry-details">What do you need? (required)</label>
+            <textarea id="inquiry-details" name="details" rows="7" maxlength="2500" required placeholder="Describe your project, who it’s for, and what visitors should be able to do."></textarea>
+            <label for="inquiry-budget">Budget range, if known</label>
+            <input id="inquiry-budget" name="budget" maxlength="100" placeholder="A rough range is fine, or leave this blank">
+            <label for="inquiry-timeline">Ideal timeline</label>
+            <input id="inquiry-timeline" name="timeline" maxlength="150" placeholder="Your preferred launch date, or flexible">
+            <button class="btn primary" type="submit">Send inquiry</button>
+            <p id="inquiry-status" role="status" tabindex="-1"></p>
+          </form>
+          <p class="detail">Your details are processed by Formspree to deliver your inquiry. Please don’t include passwords or payment information.</p>
+        </article>
+        <aside class="content-card">
+          <p class="tag">Greeley based · Serving Colorado</p>
+          <h2>Working Together</h2>
+          <p>I build responsive websites with HTML, CSS, and JavaScript. Share whether you need a new site, changes to an existing one, or help making your site work better on phones and desktops.</p>
+          <h3>Helpful details</h3>
+          <ul class="work-links">
+            <li>What your business does and who your customers are.</li>
+            <li>Pages or features you need.</li>
+            <li>Whether you already have a domain, hosting, logo, and written content.</li>
+            <li>Links to websites you like, and what you like about them.</li>
+          </ul>
+          <h3>Online or over coffee</h3>
+          <p>We can handle your project online from start to finish. If you’re local to the Greeley area, I’m happy to meet at a coffee shop to discuss your ideas.</p>
+          <p>We’ll discuss the scope, timing, and cost before agreeing to any work.</p>
+        </aside>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>NinjaBear Studios · Create. Stream. Inspire.</p>
+      <a href="/about/#contact">Contact &amp; community</a>
+    </footer>
+  </body>
+</html>

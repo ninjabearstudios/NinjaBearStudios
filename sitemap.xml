@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ninjabearstudios.com/</loc></url>
-  <url><loc>https://ninjabearstudios.com/music.html</loc></url>
-  <url><loc>https://ninjabearstudios.com/dev.html</loc></url>
-  <url><loc>https://ninjabearstudios.com/streams.html</loc></url>
-  <url><loc>https://ninjabearstudios.com/anime.html</loc></url>
-  <url><loc>https://ninjabearstudios.com/lore.html</loc></url>
-  <url><loc>https://ninjabearstudios.com/about.html</loc></url>
-  <url><loc>https://ninjabearstudios.com/inquiry.html</loc></url>
+  <url><loc>https://ninjabearstudios.com/music/</loc></url>
+  <url><loc>https://ninjabearstudios.com/dev/</loc></url>
+  <url><loc>https://ninjabearstudios.com/streams/</loc></url>
+  <url><loc>https://ninjabearstudios.com/anime/</loc></url>
+  <url><loc>https://ninjabearstudios.com/lore/</loc></url>
+  <url><loc>https://ninjabearstudios.com/about/</loc></url>
+  <url><loc>https://ninjabearstudios.com/inquiry/</loc></url>
 </urlset>
