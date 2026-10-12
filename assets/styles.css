@@ -595,9 +595,9 @@ body::before {
   min-height: 390px;
 
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
 
-  padding: 120px 7vw 60px;
+  padding: 156px 7vw 60px;
   background: url("site-banner.png") center top / cover;
 }
 
