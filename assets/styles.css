@@ -898,7 +898,10 @@ details.lyrics summary { cursor: pointer; color: var(--green2); padding: 10px 0;
 }
 @media (max-width: 760px) {
   .feature-body, .glint-panel, .update-item { grid-template-columns: minmax(0, 1fr); }
-  .hero { min-height: 620px; }
+  .hero { min-height: 150vw; background: #000; }
+  .hero-art { height: auto; }
+  .hero::after { background: none; }
+  .hero-copy, html:not(.nav-ready) .hero-copy { padding-top: 94vw; }
   .interior-hero h1 { font-size: clamp(32px, 8vw, 42px); }
   .glint-panel img { width: min(100%, 330px); }
   .content-grid { grid-template-columns: minmax(0, 1fr); }
